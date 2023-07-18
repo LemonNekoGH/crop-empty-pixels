@@ -1,0 +1,20 @@
+{
+  "name": "@lemonneko/crop-empty-pixels",
+  "private": false,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.3.1"
+  },
+  "module": "crop-empty-pixels.js",
+  "types": "main.d.ts",
+  "files": [
+    "dist"
+  ]
+}
