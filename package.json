@@ -1,20 +1,31 @@
 {
   "name": "@lemonneko/crop-empty-pixels",
-  "private": false,
-  "version": "0.1.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build"
+  "version": "0.1.0-rc.4",
+  "private": false,
+  "packageManager": "pnpm@10.15.1",
+  "author": "LemonNeko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LemonNekoGH/crop-empty-pixels.git"
   },
-  "devDependencies": {
-    "typescript": "^5.0.2",
-    "vite": "^4.4.0",
-    "vite-plugin-dts": "^3.3.1"
-  },
-  "module": "dist/crop-empty-pixels.js",
-  "types": "dist/main.d.ts",
+  "keywords": ["image-processing"],
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
-  ]
+  ],
+  "scripts": {
+    "build": "tsdown ./src/index.ts",
+    "lint": "eslint . --cache",
+    "lint:fix": "pnpm lint --fix",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^5.2.1",
+    "eslint": "^9.34.0",
+    "tsdown": "^0.13.5",
+    "typescript": "^5.9.2"
+  }
 }
