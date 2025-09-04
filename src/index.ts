@@ -10,10 +10,10 @@ export default function cropImg(origin: HTMLCanvasElement) {
   const toCropData = toCropCtx.getImageData(0, 0, toCrop.width, toCrop.height).data
 
   // crop
-  let left = toCrop.width / 2
-  let top = toCrop.height / 2
-  let right = toCrop.width / 2
-  let bottom = toCrop.height / 2
+  let left = toCrop.width
+  let top = toCrop.height
+  let right = 0
+  let bottom = 0
 
   for (let y = 0; y < toCrop.height; y++) {
     for (let x = 0; x < toCrop.width; x++) {
