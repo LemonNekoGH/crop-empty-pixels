@@ -20,7 +20,8 @@
     "build": "tsdown ./src/index.ts",
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm build"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.2.1",
