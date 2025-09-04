@@ -14,9 +14,6 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Update version
-        run: node update-version.cjs ${{ github.ref_name }}
-
       - uses: pnpm/action-setup@v2
         name: Install pnpm
         id: pnpm-install
@@ -50,16 +47,3 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./
-
-      - name: Send end message to telegram
-        uses: appleboy/telegram-action@master
-        if: always()
-        with:
-          to: ${{ secrets.TG_TO }}
-          token: ${{ secrets.TG_TOKEN }}
-          format: markdown
-          message: |
-            GitHub Actions End
-            Workflow Name: ${{ github.workflow }}
-            Url: https://github.com/LemonNekoGH/crop-empty-pixels
-            Trigger: `${{ github.ref_name }}` `${{ github.event.commits[0].id }}`
